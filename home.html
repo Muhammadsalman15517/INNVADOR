@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovador Soluction</title>
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> 
+    <link rel="icon" type="image/x-icon" href="favico/android-chrome-512x512.png">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+/*our service container*/
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Space between title and card */
+  align-items: center; /* Align items at the start */
+  max-width: 80%;
+  width: 90%;
+  height: 470px;
+  background: linear-gradient(348deg, #EC4899, #6D28D9);  /* Light background for the container */
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.web-img{
+  width: 40%;
+}
+
+.header1-title {
+  font-size: 3rem;
+  color: white;
+  text-align: left; /* Align text to the left */
+  animation: fadeIn 1s ease-in-out; /* Animation effect */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.service1-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content */
+  align-items: center; /* Center the items */
+}
+
+.service1-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.service-para p {
+  font-size: 1em;
+  margin-bottom: 40px;
+  line-height: 15px;
+}
+
+.service1-icon {
+  padding: 15px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.service1-icon:hover {
+  transform: translateY(-10px);
+  background-color: #e0e0e0;
+}
+
+.service1-icon i {
+  font-size: 2rem;
+  color: black; /* Green color for icons */
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items */
+      height: auto; /* Allow height to adjust */
+  }
+
+  .header1-title {
+      font-size: 2.5rem; /* Smaller font size for the header */
+      text-align: center; /* Center the title */
+  }
+
+  .service1-card {
+      max-width: 90%; /* Use more width on smaller screens */
+      padding: 15px; /* Adjust padding */
+  }
+
+  .icon-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+      gap: 15px; /* Adjust gap between icons */
+  }
+
+  .service1-card-title {
+      font-size: 1.2rem; /* Smaller title font size */
+      margin-bottom: 15px; /* Adjust bottom margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .header1-title {
+      font-size: 2rem; /* Further reduce font size */
+  }
+
+  .icon-grid {
+      grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+
+  .service1-card-title {
+      font-size: 1.5rem; /* Adjust title font size for mobile */
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .header1-title {
+    font-size: 2.5rem; /* Smaller font size for the header */
+    text-align: center; /* Center the title */
+  }
+
+  .service1-card {
+    max-width: 90%; /* Use more width on smaller screens */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    gap: 15px; /* Adjust gap between icons */
+  }
+
+  .service1-card-title {
+    font-size: 1.2rem; /* Smaller title font size */
+    margin-bottom: 15px; /* Adjust bottom margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .header1-title {
+    font-size: 2rem; /* Further reduce font size */
+  }
+
+  .icon-grid {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+
+  .service1-card-title {
+    font-size: 1.5rem; /* Adjust title font size for mobile */
+  }
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+          <img src="IMG/logo.png" alt="Logo" class="logo-image"> 
+      </div>
+      <div class="toggle-button" onclick="toggleNavbar()">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li>
+              <a href="service.html" class="dropdown-toggle">Services</a>  
+              <ul class="dropdown">
+                  <li><a href="ui_ux.html">UI/UX</a></li>
+                  <li><a href="web.html">Web Development</a></li>
+                  <li><a href="mobile.html">Mobile Application</a></li>
+                  <li><a href="it.html">IT Consultancy</a></li>
+                  <li><a href="Saas.html">SaaS & Cloud Computing</a></li>
+                  <li><a href="digital.html">Digital Marketing</a></li>
+              </ul>
+          </li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="blog_one.html">Blogs</a></li>
+          <li><a href="careers.html">Career</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+  </nav>
+  
+  <BR><BR>
+
+
+    <div class="main-container">
+      <h1 class="header1-title">Innovador Solution</h1>
+      <div class="service1-card">
+          <h2 class="service1-card-title">Our Services</h2>
+          <div class="icon-grid">
+            <div class="service1-icon">
+                <a href="web.html">
+                    <i class="fas fa-laptop-code"></i>
+                    <p>Web Development</p>
+                </a>
+            </div>
+            <div class="service1-icon">
+                <a href="mobile.html">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>Mobile Applications</p>
+                </a>
+            </div>
+            <div class="service1-icon">
+                <a href="it.html">
+                    <i class="fas fa-headset"></i>
+                    <p>IT Consulting</p>
+                </a>
+            </div>
+            <div class="service1-icon">
+                <a href="Saas.html">
+                    <i class="fas fa-cloud"></i>
+                    <p>SaaS & Cloud Computing</p>
+                </a>
+            </div>
+            <div class="service1-icon">
+                <a href="degital.html">
+                    <i class="fas fa-chart-line"></i>
+                    <p>Digital Marketing</p>
+                </a>
+            </div>
+            <div class="service1-icon">
+                <a href="ui_ux.html">
+                    <i class="fas fa-user-edit"></i>
+                    <p>UI / UX</p>
+                </a>
+            </div>
+        </div></div> </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+   <br><br> <div class="banner">
+      <div class="left-section">
+        <h1>About Innovador Solutions</h1>
+        <p>
+          We are a leading software company dedicated to providing the best
+          digital solutions to businesses. We have been serving a number of
+          clients globally since 2022. We dispense the demanding services
+          resulting in the transformation of companies into businesses to make
+          them a prominent mark in the digital world, and we make it all
+          possible with the back of our skilled professionals. Our registration
+          with SECP, P@SHA, CXO Global Forum, and other professional bodies
+          makes us the chosen ones.
+        </p>
+
+        <!-- Images section -->
+        <div class="partners">
+          <img src="IMG/SECP-white2.png" alt="PSEB" />
+          <img src="IMG/P@SHA-White.png" alt="P@SHA" />
+          <img src="IMG/CXO-Global.png" alt="CXO Global Forum" />
+          
+        </div>
+    
+      </div>
+<div class="web-img">
+  <img src="IMG/Web-img-02.png" alt="">
+
+</div>
+     
+      </div>
+    </div>
+    <div class="container">
+      <div class="info-box" id="info-box">
+          <div class="info-header">
+              <h1>#Our Product</h1>
+              <h2>Business Solution</h2>
+          </div>
+          <h3>Information</h3>
+          <p id="info-text">Click on an image to see more information.</p>
+      </div>
+
+      <div class="iphone-card">
+        <div class="image-grid-container">
+        <div class="image-grid">
+            <div class="image-box" onclick="showInfo('info1')">
+                <img src="IMG/Aasaan.png" alt="Image 1">
+            </div>
+            <div class="image-box" onclick="showInfo('info2')">
+                <img src="IMG/AMS-1.png" alt="Image 2">
+            </div>
+            <div class="image-box" onclick="showInfo('info3')">
+                <img src="IMG/EasyFee.png" alt="Image 3">
+            </div>
+            <div class="image-box" onclick="showInfo('info4')">
+                <img src="IMG/EasyForms.png" alt="Image 4">
+            </div>
+            <div class="image-box" onclick="showInfo('info5')">
+                <img src="IMG/HR360.png" alt="Image 5">
+            </div>
+            <div class="image-box" onclick="showInfo('info6')">
+                <img src="IMG/iSchool.png" alt="Image 6">
+            </div>
+            <div class="image-box" onclick="showInfo('info7')">
+                <img src="IMG/iSchoolforme-1.png" alt="Image 7">
+            </div>
+            <div class="image-box" onclick="showInfo('info8')">
+                <img src="IMG/iTeam-3.png" alt="Image 8">
+            </div>
+            <div class="image-box" onclick="showInfo('info9')">
+                <img src="IMG/Soul-Whispers.png" alt="Image 9">
+            </div>
+        </div>
+    </div>
+    </div></div>
+
+<section class="service-section">
+  <div class="service-container">
+    <h3 class="service-main-heading">#360 Service</h3>
+    <h1 class="service-sub-heading">Services for Business</h1>
+    <div class="service-card-grid">
+      <a class="service-card" href="#">
+        <div class="service-card__background" style="background-image: url(IMG/col-1.jpg)"></div>
+        <div class="service-card__content">
+          <i class="fas fa-paint-brush fa-3x"></i>
+          <h3 class="service-card__category">UI / UX</h3>
+          <p class="service-para">
+            We are the wizards of UI/UX; the two main components on which
+            the performance of any website or application depends. By
+            excelling in UI/UX, we develop user-friendly web applications
+            tailored for every device.
+          </p>
+        </div>
+      </a>
+      <a class="service-card" href="">
+        <div class="service-card__background" style="background-image: url(IMG/col-1.jpg)"></div>
+        <div class="service-card__content">
+          <i class="fas fa-laptop-code fa-3x"></i>
+          <h3 class="service-card__category">Web Development</h3>
+          <p class="service-para">
+            Using cutting-edge technologies, our team develops web
+            applications to cater to the dynamic needs of today’s
+            businesses. This encompasses full-stack development, from
+            front-end design to database and software architecture
+            development to implementation.
+          </p>
+        </div>
+      </a>
+      <a class="service-card" href="#">
+        <div class="service-card__background" style="background-image: url(IMG/col-1.jpg)"></div>
+        <div class="service-card__content">
+          <i class="fas fa-mobile-alt fa-3x"></i>
+          <h3 class="service-card__category">Mobile Application</h3>
+          <p class="service-para">
+            We develop mobile apps to serve a wide range of purposes, from
+            productivity to Health-Tech, Ed-Tech, e-commerce and many more.
+            These applications are the key elements to increasing the
+            efficiency and productivity of every sort of business.
+          </p>
+        </div>
+      </a>
+      <a class="service-card" href="#">
+        <div class="service-card__background" style="background-image: url(IMG/col-1.jpg)"></div>
+        <div class="service-card__content">
+          <i class="fas fa-cogs fa-3x"></i>
+          <h3 class="service-card__category">IT Consultancy</h3>
+          <p class="service-para">
+            We benefit our customers with our extensive knowledge of IT,
+            which includes the most considered areas such as UI/UX
+            Designing, Software Development, Data Analytics, Artificial
+            Intelligence and Digital Marketing.
+          </p>
+        </div>
+      </a>
+      <a class="service-card" href="#">
+        <div class="service-card__background" style="background-image: url(IMG/col-1.jpg)"></div>
+        <div class="service-card__content">
+          <i class="fas fa-cloud fa-3x"></i>
+          <h3 class="service-card__category">SaaS & Cloud Computing</h3>
+          <p class="service-para">
+            We eliminate upfront costs for our clients, making it easier for
+            them to try our cloud-based software and application services
+            and scale their usage as their needs grow. Our SaaS services
+            make our clients and users free from stress of investing in
+            hardware.
+          </p>
+        </div>
+      </a>
+      <a class="service-card" href="#">
+        <div class="service-card__background" style="background-image: url(IMG/col-1.jpg)"></div>
+        <div class="service-card__content">
+          <i class="fas fa-bullhorn fa-3x"></i>
+          <h3 class="service-card__category">Digital Marketing</h3>
+          <p class="service-para">
+            Making your business approachable for everyone by promoting it
+            via online platforms. Our digital marketing services are the
+            go-to solutions to reach a wider audience effortlessly by using
+            the top-notch techniques of social media marketing, search
+            engine optimization - SEO, and Search Engine Marketing -SEM.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<br><br>
+
+<div class="slider-container">
+<h1>Innovative Solutions Across Every Sector</h1>
+<p>Driving success in diverse industries</p>
+<div class="slider">
+  <div class="slide">
+      <img src="IMG/game.jpg" alt="Image 1">
+      <div class="name">Gaming & Entertainment</div>
+      <div class="info">Our team excels in creating immersive, interactive experiences across various platforms, including mobile, PC, and consoles.</div>
+  </div>
+  <div class="slide">
+      <img src="IMG/retail.jpg" alt="Image 2">
+      <div class="name">Retail & Distribution</div>
+      <div class="info">Our expert team creates innovative solutions to streamline operations, enhance customer experiences, and optimize supply chain management.</div>
+  </div>
+  <div class="slide">
+      <img src="IMG/education.jpg" alt="Image 3">
+      <div class="name">Education</div>
+      <div class="info">Our expert team creates innovative solutions to enhance learning experiences, streamline administrative processes, and improve educational outcomes.</div>
+  </div>
+  <div class="slide">
+      <img src="IMG/health.jpg" alt="Image 4">
+      <div class="name">Health Care</div>
+      <div class="info">Our expert team creates innovative solutions to enhance patient care, streamline administrative processes, and improve overall healthcare outcomes.</div>
+  </div>
+  <div class="slide">
+      <img src="IMG/business.jpg" alt="Image 5">
+      <div class="name">Business and Finance</div>
+      <div class="info">Our expert team creates innovative solutions to streamline financial operations, enhance data security, and optimize business processes.</div>
+  </div>
+</div>
+</div>
+
+<br><br><br>
+<div class="banner1-container">
+<div class="banner1">
+  <div class="banner1-item">
+      <img src="IMG/Aptech.png" alt="Image 1">
+  </div>
+  <div class="banner1-item">
+      <img src="IMG/03.Bano-Qabil.png" alt="Image 2">
+  </div>
+  <div class="banner1-item">
+      <img src="IMG/04.Bay-View.png" alt="Image 3">
+  </div>
+  <div class="banner1-item">
+      <img src="IMG/05.Columba.png" alt="Image 4">
+  </div>
+  <div class="banner1-item">
+      <img src="IMG/07.Minerva.png" alt="Image 5">
+  </div>
+  <div class="banner1-item">
+      <img src="IMG/06.Knowledge-Zone.png" alt="Image 6">
+  </div>
+  <div class="banner1-item">
+      <img src="IMG/Alpha-icon.png" alt="Image 7">
+  </div>
+  <div class="banner1-item">
+    <img src="IMG/08.Tech-Skills.png" alt="Image 7">
+</div>
+</div>
+</div>
+<br><br>
+<div class="card2-container">
+    <div class="card2">
+        <img src="IMG/c1.jpg" alt="card-1" width="230" height="240" />
+        <div class="caption">
+            <span class="title">
+              We conduct productive sessions and workshops with clients to clearly understand their requirements, ensuring effective communication and precise software requirement specifications.</span><br />
+        </div>
+    </div>
+
+    <div class="card2">
+        <img src="IMG/c2.jpg" alt="card-2" width="240" height="250" />
+        <div class="caption">
+            <span class="title">Upon finalizing the SRS, we propose tailored solutions that align with your business objectives. Our expert team crafts innovative strategies, ensuring feasibility and efficiency</span><br />
+        </div>
+    </div>
+
+    <div class="card2">
+        <img src="IMG/c3.jpg" alt="Card-3" width="240" height="250" />
+        <div class="caption">
+            <span class="title">We implement solutions with a robust plan, focusing on seamless execution, quality assurance, and alignment with the SRS to deliver reliable and efficient software.</span><br />
+    </div>
+</div>
+</div>
+
+
+<br>
+<div class="client-container mt-5">
+<h3>Our Clients</h3>
+<p>We Value Our Customers' Trust</p>
+
+<div class="row justify-content-center">
+  <!-- First Card -->
+  <div class="col-md-4 mb-4">
+      <div class="card3">
+          <img src="IMG/Aptech.png" alt="Client Icon">
+          <div class="card3-content">
+              <h4>Our Client</h4>
+              <p>"Innovador Solutions effectively met our web application requirements with their innovative approach and ability to handle complex workflows.
+                Even after implementation, they are successfully maintaining the system's performance, ensuring smooth and efficient operations and 99.99% u-time."</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Second Card -->
+  <div class="col-md-4 mb-4">
+      <div class="card3">
+          <img src="IMG/Alpha-icon.png" alt="Customer Icon">
+          <div class="card3-content">
+            <h4></h4>
+              <h4>Our Client</h4>
+              <p>We came up with some specific requirements that everybody failed to fulfill, but these talented individuals made all that possible by dealing with the special functionalities and unusual features smartly.</p>
+          </div>
+      </div>
+  </div>
+  
+</div>
+</div>
+<br><br>
+<footer class="footer-section">
+  <div class="container3">
+      <div class="footer-cta">
+          <div class="single-cta">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="cta-text">
+                  <h4>Find us</h4>
+                  <span></span>
+              </div>
+          </div>
+          <div class="single-cta">
+              <i class="fa fa-phone"></i>
+              <div class="cta-text">
+                  <h4>Call us</h4>
+                  <span>9876543210</span>
+              </div>
+          </div>
+          <div class="single-cta">
+              <i class="far fa-envelope-open"></i>
+              <div class="cta-text">
+                  <h4>Mail us</h4>
+                  <span>info@innovadorsolutions.com</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="country-icons">
+          <div class="country-icon">
+              <img src="images/Icon-Karachi.png" alt="USA Flag">
+              <span>Karachi</span>
+              <span>111, Progressive Center, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, Karachi City, Sindh 75400
+                  +92 332 466 6823</span> 
+               <!-- USA Flag -->
+          </div>
+          <div class="country-icon">
+              <img src="images/Icon-Hyderabad.png" alt="Canada Flag"> <!-- Canada Flag -->
+              <span>Hyderabad</span>
+              <span>Anum Center, 1st Floor, Defence Commercial Area, Defence Housing Society, Hyderabad, Sindh, Pakistan 71000
+                  +92 332 466 6823</span>
+          </div>
+          <div class="country-icon">
+              <img src="images/Icon-Lahore.png" alt="UK Flag"> <!-- UK Flag -->
+              <span>Lahore</span>
+              <span>2nd Floor, Commercial Plaza Near Allah-U-Chowk Khayaban-e-Firdousi, Block E Phase 1 Johar Town, Lahore
+                  +92 332 466 6823</span>
+          </div>
+          <div class="country-icon">
+              <img src="images/Icon-USA.png" alt="Australia Flag"> <!-- Australia Flag -->
+              <span>Usa</span>
+              <span>1000 John R RD, ST 602, Troy 48083
+                  +1 517 366 1928</span>
+          </div>
+          <div class="country-icon">
+              <img src="images/Icon-Qatar.png" alt="India Flag"> <!-- India Flag -->
+              <span>Qatar</span>
+              <span>+97 430 074 923</span>
+          </div>
+          <div class="country-icon">
+              <img src="images/Icon-Canada.png" alt="Germany Flag"> <!-- Germany Flag -->
+              <span>Canada</span>
+              <span>3050-160 ERIN Center BLV MISSISSAUGA L5M OP5
+                  +1 289 547 2576</span>
+          </div>
+      </div>
+
+      <div class="footer-content">
+          
+              <div class="footer-widget">
+                  <div class="footer-logo">
+                      <a href="#"><img src="IMG/logo2.png" alt="logo"></a>
+                  </div>
+                  
+              </div>
+
+              <div class="footer-social-icon">
+                <h4>Follow us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+            </div>
+
+              <div class="footer-widget">
+                  <h3>Subscribe</h3>
+                  <p>Don’t miss to subscribe to our news feeds, kindly fill the form below.</p>
+                  
+              </div>
+              <div class="subscribe-form">
+                <form action="#">
+                    <input type="email" placeholder="Email Address" required></input>
+                    <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                </form>
+            </div>
+         
+      </div>
+  </div>
+
+  <div class="footer-menu">
+      <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="blog_one.html">Blog</a></li>
+      </ul>
+  </div>
+
+  <div class="copyright-area">
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+  </div>
+</footer>
+
+
+     
+  </body>
+  <script src="script.js"></script>
+</html>

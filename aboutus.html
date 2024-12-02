@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovador soluction AboutUS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> 
+    <link rel="icon" type="image/x-icon" href="favico/favicon-16x16.png">
+    <script src="JQuery.js/jquery-3.7.1.min.js"></script>
+    <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+          <img src="IMG/logo.png" alt="Logo" class="logo-image"> <!-- Replace with your image path -->
+      </div>
+      <div class="toggle-button" onclick="toggleNavbar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+      <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li>
+              <a href="aboutus.html">About Us</a></li>
+          <li><a href="service.html" class="dropdown-toggle">Services</a>  
+            <ul class="dropdown">
+              <li><a href="ui_ux.html">UI/UX</a></li>
+              <li><a href="web.html">Web Development</a></li>
+              <li><a href="mobile.html">Mobile Application</a></li>
+              <li><a href="it.html">it consultancy</a></li>
+              <li><a href="Saas.html">Saas & Cloud computing</a></li>
+              <li><a href="degital.html">degital markiting</a></li>
+          </ul>                       </li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="blog_one.html">Blogs</a></li>
+          <li><a href="careers.html">career</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+  </nav>
+  <div class="careers-container">
+    <h1>#About Us</h1>
+    <h2>Innovador Soluction<h2>
+    <h5>We are a mission-driven software company dedicated to shaping the future of business. We combine cutting-edge technologies with user-friendly interfaces to make everyday tasks effortless. Our passion for innovation inspires us to create transformative technology designed to empower businesses and improve lives. The company is registered with local statutory and professional bodies such as SECP, PSEB, P@SHA, and the CXO Global Forum.</h5>
+</div> <div class="partners1">
+  <img src="IMG/SECP-white2.png" alt="PSEB" />
+  <img src="IMG/P@SHA-White.png" alt="P@SHA" />
+  <img src="IMG/CXO-Global.png" alt="CXO Global Forum" />
+  <img src="IMG/CXO-Global.png" alt="CXO Global Forum" />
+</div>
+
+<div class="aboutbanner">
+  <div class="typed_wrap">
+      <h1>our <span class="typed"></span></h1>
+      <div class="content">
+          <img src="IMG/mission.png" alt="Mission" class="image-mission" style="display: none; width: 100px; height: 100px;"/> <!-- Update path -->
+          <span class="text-mission" style="display: none;">To balance innovation with practicality by delivering a diverse range of software services</span>
+      </div>
+      <div class="content">
+          <img src="IMG/vission.png" alt="Vision" class="image-vision" style="display: none; width: 100px; height: 100px;"/> <!-- Update path -->
+          <span class="text-vision" style="display: none;">Our vision is to create intelligent systems that empower businesses and people around the globe</span>
+      </div>
+      <div class="content">
+          <img src="IMG/team.png" alt="Team" class="image-team" style="display: none; width: 100px; height: 100px;"/> <!-- Update path -->
+          <span class="text-team" style="display: none;">We are a team with a collective experience of over 100 years! 50+ skilled professionals with diversified experience</span>
+      </div>
+  </div>
+</div>
+<div class="vision">
+    <div class="vision-text">
+      <h1>Our vision</h1>
+      <p>“To create a future where innovation and technology empower every individual and business to achieve greatness.”</p>
+    </div>
+    <div class="vision-image">
+      <img src="IMG/ourvission.jpg" alt="Banner Image">
+    </div>
+  </div>
+
+  <div class="team-banner">
+    <div class="team-image">
+      <img src="IMG/ourteam.jpg" alt="Team Image">
+    </div>
+    <div class="team-text">
+      <h1>Our Team</h1>
+      <p>“Individually, we are one drop. Together, we are an ocean.”
+        — Ryunosuke Satoro</p>
+    </div>
+  </div>
+  <div class="vision">
+    <div class="vision-text">
+      <h1>our Mission</h1>
+      <p>“To deliver exceptional solutions with creativity, integrity, and commitment, driving success for our clients and inspiring a better tomorrow.”</p>
+    </div>
+    <div class="vision-image">
+      <img src="IMG/ourmission.jpg" alt="Banner Image">
+    </div>
+  </div>
+<script>
+ const texts = ["mission.", "vision.", "team."];
+const images = [
+    document.querySelector(".image-mission"),
+    document.querySelector(".image-vision"),
+    document.querySelector(".image-team")
+];
+const textLabels = [
+    document.querySelector(".text-mission"),
+    document.querySelector(".text-vision"),
+    document.querySelector(".text-team")
+];
+const typedElement = document.querySelector(".typed");
+let textIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < texts[textIndex].length) {
+        typedElement.textContent += texts[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100); // Typing speed
+    } else {
+        // Show the image and text for the current index
+        images[textIndex].style.display = 'inline';
+        textLabels[textIndex].style.display = 'inline';
+        setTimeout(erase, 1000); // Pause before erasing
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        typedElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50); // Erasing speed
+    } else {
+        // Hide the image and text for the current index
+        images[textIndex].style.display = 'none';
+        textLabels[textIndex].style.display = 'none';
+        textIndex = (textIndex + 1) % texts.length; // Loop through texts
+        setTimeout(type, 500); // Pause before typing next text
+    }
+}
+
+// Start the typing effect
+type();
+
+
+</script>
+
+<div class="banner1-container">
+  <div class="banner1">
+    <div class="banner1-item">
+        <img src="IMG/Aptech.png" alt="Image 1">
+    </div>
+    <div class="banner1-item">
+        <img src="IMG/03.Bano-Qabil.png" alt="Image 2">
+    </div>
+    <div class="banner1-item">
+        <img src="IMG/04.Bay-View.png" alt="Image 3">
+    </div>
+    <div class="banner1-item">
+        <img src="IMG/05.Columba.png" alt="Image 4">
+    </div>
+    <div class="banner1-item">
+        <img src="IMG/07.Minerva.png" alt="Image 5">
+    </div>
+    <div class="banner1-item">
+        <img src="IMG/06.Knowledge-Zone.png" alt="Image 6">
+    </div>
+    <div class="banner1-item">
+        <img src="IMG/Alpha-icon.png" alt="Image 7">
+    </div>
+    <div class="banner1-item">
+      <img src="IMG/08.Tech-Skills.png" alt="Image 7">
+  </div>
+  </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="container3">
+        <div class="footer-cta">
+            <div class="single-cta">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="cta-text">
+                    <h4>Find us</h4>
+                    <span></span>
+                </div>
+            </div>
+            <div class="single-cta">
+                <i class="fa fa-phone"></i>
+                <div class="cta-text">
+                    <h4>Call us</h4>
+                    <span>9876543210</span>
+                </div>
+            </div>
+            <div class="single-cta">
+                <i class="far fa-envelope-open"></i>
+                <div class="cta-text">
+                    <h4>Mail us</h4>
+                    <span>info@innovadorsolutions.com</span>
+                </div>
+            </div>
+        </div>
+  
+        <div class="country-icons">
+            <div class="country-icon">
+                <img src="images/Icon-Karachi.png" alt="USA Flag">
+                <span>Karachi</span>
+                <span>111, Progressive Center, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, Karachi City, Sindh 75400
+                    +92 332 466 6823</span> 
+                 <!-- USA Flag -->
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Hyderabad.png" alt="Canada Flag"> <!-- Canada Flag -->
+                <span>Hyderabad</span>
+                <span>Anum Center, 1st Floor, Defence Commercial Area, Defence Housing Society, Hyderabad, Sindh, Pakistan 71000
+                    +92 332 466 6823</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Lahore.png" alt="UK Flag"> <!-- UK Flag -->
+                <span>Lahore</span>
+                <span>2nd Floor, Commercial Plaza Near Allah-U-Chowk Khayaban-e-Firdousi, Block E Phase 1 Johar Town, Lahore
+                    +92 332 466 6823</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-USA.png" alt="Australia Flag"> <!-- Australia Flag -->
+                <span>Usa</span>
+                <span>1000 John R RD, ST 602, Troy 48083
+                    +1 517 366 1928</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Qatar.png" alt="India Flag"> <!-- India Flag -->
+                <span>Qatar</span>
+                <span>+97 430 074 923</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Canada.png" alt="Germany Flag"> <!-- Germany Flag -->
+                <span>Canada</span>
+                <span>3050-160 ERIN Center BLV MISSISSAUGA L5M OP5
+                    +1 289 547 2576</span>
+            </div>
+        </div>
+  
+        <div class="footer-content">
+            
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <a href="#"><img src="IMG/logo2.png" alt="logo"></a>
+                    </div>
+                    
+                </div>
+  
+                <div class="footer-social-icon">
+                  <h4>Follow us</h4>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  
+              </div>
+  
+                <div class="footer-widget">
+                    <h3>Subscribe</h3>
+                    <p>Don’t miss to subscribe to our news feeds, kindly fill the form below.</p>
+                    
+                </div>
+                <div class="subscribe-form">
+                  <form action="#">
+                      <input type="email" placeholder="Email Address" required>
+                      <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                  </form>
+              </div>
+           
+        </div>
+    </div>
+  
+    <div class="footer-menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog_one.html">Blog</a></li>
+        </ul>
+    </div>
+  
+    <div class="copyright-area">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+  </body>
+</html>

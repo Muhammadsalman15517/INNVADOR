@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web development</title>
+    <link rel="icon" type="image/x-icon" href="favico/favicon-16x16.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet" />
+    
+ 
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<style>
+    
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefeff; /* Light background */
+  padding: 20px;
+  position: relative;
+  flex-direction: row;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 10px;
+  display: flex;
+  max-height: 150px;
+  max-width: 120px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: black; /* Text color for links */
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(348deg, #EC4899, #6D28D9); 
+  transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444; /* Dark background for dropdown */
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown li {
+  white-space: nowrap;
+}
+
+.dropdown li a {
+  padding: 10px 20px;
+  display: block;
+  color: #ffffff; /* Text color for dropdown links */
+}
+
+.dropdown li a:hover {
+  background-color: white; /* Darker gray on hover */
+}
+
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+  display: block; /* Show dropdown when hovering over parent li */
+}
+
+/* Media Query for Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Stack logo and nav links */
+      padding: 10px;
+  }
+
+  .nav-links {
+      flex-direction: column; /* Stack links vertically */
+      gap: 10px; /* Reduce gap between links */
+      width: 100%; /* Make links take full width */
+      display: none; /* Hide links by default */
+  }
+
+  .nav-links.active {
+      display: flex; /* Show links when active */
+  }
+
+  .nav-links li {
+      width: 100%; /* Make each link full-width */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+      max-height: 100px; /* Reduce logo size for mobile */
+      max-width: 80px;
+  }
+
+  .nav-links a {
+      padding: 8px 12px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Toggle button styles */
+.toggle-button {
+  display: none; /* Hide toggle button by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.toggle-button div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+}
+
+/* Show toggle button on mobile */
+@media (max-width: 768px) {
+  .toggle-button {
+      display: flex; /* Show toggle button on mobile */
+  }
+}
+ /* Ui/ux start */
+     .ui-ux-box {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.ui-ux-box {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.obj {
+    margin-bottom: 7%;
+    margin-top: 7%;
+    align-items: center;
+}
+.obj h1{
+    font-size: 2.5rem;  
+}
+.obj h2{
+    font-size: 1.5rem;
+}
+
+.banner {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 7%;
+    padding-bottom: 42px;
+}
+
+/* UI/UX Icon Container */
+.uiux-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    position: relative;
+}
+
+.uiux-icon {
+    font-size: 100px; /* Adjust size */
+    color: #008cba; /* UI/UX color */
+    animation: speakAnimation 5s infinite;
+}
+
+/* Speech Bubble */
+.speech-bubble {
+    position: absolute;
+    top: 150px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 250px;
+    font-size: 1rem;
+    text-align: center;
+    animation: bubbleEffect 5s infinite;
+}
+
+.speech-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f1f1f1 transparent transparent transparent;
+}
+
+/* Speech Animation */
+@keyframes speakAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bubbleEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* UI/UX Benefits Section */
+.ui-ux-info {
+    width: 45%;
+    padding: 10px;
+}
+
+.ui-ux-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #af5eff;
+    font-weight: 800;
+}
+
+.ui-ux-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ui-ux-info li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.ui-ux-info li strong {
+    color: #000000;
+    font-size: 25px;
+}
+.uiux-icon{
+    width: 90%;
+}
+.uiux-icon img {
+    width: 100%;
+}
+.ui-ux-info li i {
+    margin-right: 10px;
+    color: #af5eff;
+    font-size: 22px;
+}
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .uiux-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .uiux-icon {
+        font-size: 80px; /* Slightly smaller icon */
+      
+    }
+   
+
+    .speech-bubble {
+        top: 120px;
+        font-size: 0.9rem;
+        max-width: 200px;
+    }
+   
+    
+
+    .ui-ux-info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .ui-ux-info h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .ui-ux-info ul {
+        padding-left: 20px;
+    }
+
+    .ui-ux-info li {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .uiux-icon {
+        font-size: 60px; /* Even smaller icon for very small screens */
+    }
+
+    .speech-bubble {
+        font-size: 0.8rem;
+    }
+
+    .ui-ux-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .ui-ux-info li {
+        font-size: 0.9rem;
+    }
+}
+       /* Footer Section Styles */
+       .footer-section {
+  background: #151414;
+  color: #fff;
+  padding: 15px 0; /* Adjusted padding */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container3 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CTA Section */
+.footer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly; /* Changed to space-between for better alignment */
+  border-bottom: 1px solid #373636;
+  padding: 10px 0;
+}
+
+.single-cta {
+  display: flex;
+  margin: 5px;
+  
+}
+
+.single-cta i {
+  color: #cf41a0;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.cta-text h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cta-text span {
+  color: #757575;
+  font-size: 13px;
+}
+
+/* Country Icons Section */
+.country-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 19px 0;
+  flex-direction: row;
+}
+
+.country-icon {
+  text-align: center;
+  width: 30%;
+  margin: 5px;
+}
+
+.country-icon img {
+  width: 35px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.country-icon span {
+  display: block;
+  font-size: 12px;
+  color: #fff;
+  margin-top: 3px;
+}
+
+/* Footer Content */
+.footer-content {
+  display: grid;
+  grid-template-columns: 12% 15% 50% 28%;
+  align-items: center;
+  justify-items: center;
+  align-content: space-evenly;
+}
+
+.footer-widget {
+  text-align: center;
+  margin-bottom: 15px;
+  flex: 1 1 30%; /* Maintain flex-grow to ensure widgets are evenly spaced */
+}
+
+.footer-logo img {
+  max-width: 130px;
+  margin-bottom: 10px;
+}
+
+.footer-social-icon h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 6px;
+}
+
+/* Subscribe Form */
+.subscribe-form {
+  text-align: center;
+  position: relative;
+  margin-top: 15px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 10px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+
+.footer-widget h3 {
+  color: #cf41a0;
+
+}
+.subscribe-form button {
+  position: absolute;
+  right: 1px;
+  top: 10.5px;
+  background: #cf41a0;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.subscribe-form button i {
+  color: #fff;
+}
+
+/* Footer Menu */
+.footer-menu {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-menu ul li {
+  margin: 0 8px;
+}
+
+.footer-menu ul li a {
+  color: #878787;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-menu ul li a:hover {
+  color: #ff5e14;
+}
+
+/* Copyright Area */
+.copyright-area {
+  background: #202020;
+  padding: 10px 0;
+  text-align: center;
+  color: #878787;
+  font-size: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .footer-cta, .footer-content {
+      flex-direction: column;
+      align-items: center; /* Center items on smaller screens */
+  }
+
+  .single-cta {
+      flex: 1 1 100%; /* Allow full width for each item */
+      justify-content: center;
+      text-align: center;
+  }
+
+  .footer-widget {
+      margin-bottom: 20px; /* Added margin for spacing */
+  }
+
+  .country-icon {
+      width: 45%; /* Adjusted for smaller screens */
+  }
+
+  .footer-menu ul {
+      flex-direction: column; /* Stack menu items */
+  }
+
+  .footer-menu ul li {
+      margin: 5px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta, .country-icons, .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .country-icon {
+      width: 100%; /* Full width on small screens */
+      text-align: center;
+  }
+
+  .single-cta i {
+      font-size: 22px; /* Slightly smaller icons */
+      margin-right: 8px;
+  }
+
+  .footer-logo img {
+      max-width: 100px; /* Smaller logo for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+      padding: 8px 0; /* Reduced padding */
+  }
+
+  .footer-cta {
+      padding: 8px 0; /* Reduced padding */
+  }
+
+  .footer-widget h3 {
+      font-size: 14px; /* Smaller heading */
+  }
+
+  .footer-social-icon a {
+      font-size: 14px; /* Smaller social icon size */
+  }
+
+  .country-icon span {
+      font-size: 11px; /* Smaller country icon text */
+  }
+
+  .subscribe-form input {
+      padding: 8px; /* Adjusted input padding */
+  }
+
+  .footer-menu ul li a {
+      font-size: 12px; /* Smaller menu text */
+  }
+
+  .copyright-area {
+      font-size: 11px; /* Smaller copyright text */
+  }
+}
+
+
+/*footer container end*/
+   
+</style>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="IMG/logo.png" alt="Logo" class="logo-image"> <!-- Replace with your image path -->
+        </div>
+        <div class="toggle-button" onclick="toggleNavbar()">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="aboutus.html">About Us</a></li>
+            <li><a href="service.html" class="dropdown-toggle">Services</a>  
+              <ul class="dropdown">
+                <li><a href="ui_ux.html">UI/ux</a></li>
+                <li><a href="web.html">Web Development</a></li>
+                <li><a href="mobile.html">Mobile Application</a></li>
+                <li><a href="it.html">it consultancy</a></li>
+                <li><a href="Saas.html">Saas & Cloud computing</a></li>
+                <li><a href="degital.html">degital markiting</a></li>
+            </ul>                       </li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="careers.html">career</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </nav>
+ <div  class="container">
+        <div class="obj">
+            <h1>We Provide Best Web Development </h1>
+            <h2>Objective</h2>
+            <p>
+                Our web development service is dedicated to building robust, responsive, and dynamic websites that provide an excellent user experience. We focus on creating scalable and high-performance web solutions tailored to meet the specific needs of our clients. By integrating modern technologies and best practices, we ensure that our websites are not only visually appealing but also secure, fast, and optimized for success.
+            </p>
+            
+        </div>
+        </div>
+   <div class="ui-ux-box"> 
+    <div class="banner">
+    
+        <!-- UI/UX Icon Container -->
+        <div class="uiux-container">
+            <div class="uiux-icon">
+                <!-- UI/UX Icon -->
+              <img src="IMG/web development.jpeg">
+            </div>
+            <div class="speech-bubble">
+                <p><strong>Web Development Benefits</strong></p>
+                <p>Web development is essential for creating robust, responsive, and dynamic websites that provide an excellent user experience and meet business objectives.</p>
+            </div>
+        </div>
+
+        <!-- UI/UX Benefits Text with Icons -->
+        <div class="ui-ux-info">
+            <h2>Web Development Benefits</h2>
+            <ul>
+                <li><i class="fas fa-tools"></i><strong>Custom Development</strong> </li>
+                <li><i class="fi fi-rs-ux-browser"></i><strong>Responsive Design</strong> .</li>
+                <li><i class="fas fa-search"></i><strong>SEO Optimization</strong> </li>
+                <li><i class="fas fa-lock"></i><strong> Secure & Scalable</strong>.</li>
+                <li><i class="fas fa-bolt"></i><strong>High Performance</strong> </li>
+                <li><i class="fas fa-globe"></i><strong>Cross-Browser Compatibility</strong> </li>
+                <li><i class="fas fa-wrench"></i><strong> Maintenance & Support</strong> </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+<footer class="footer-section">
+    <div class="container3">
+        <div class="footer-cta">
+            <div class="single-cta">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="cta-text">
+                    <h4>Find us</h4>
+                    <span></span>
+                </div>
+            </div>
+            <div class="single-cta">
+                <i class="fa fa-phone"></i>
+                <div class="cta-text">
+                    <h4>Call us</h4>
+                    <span>9876543210</span>
+                </div>
+            </div>
+            <div class="single-cta">
+                <i class="far fa-envelope-open"></i>
+                <div class="cta-text">
+                    <h4>Mail us</h4>
+                    <span>info@innovadorsolutions.com</span>
+                </div>
+            </div>
+        </div>
+  
+        <div class="country-icons">
+            <div class="country-icon">
+                <img src="images/Icon-Karachi.png" alt="USA Flag">
+                <span>Karachi</span>
+                <span>111, Progressive Center, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, Karachi City, Sindh 75400
+                    +92 332 466 6823</span> 
+                 <!-- USA Flag -->
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Hyderabad.png" alt="Canada Flag"> <!-- Canada Flag -->
+                <span>Hyderabad</span>
+                <span>Anum Center, 1st Floor, Defence Commercial Area, Defence Housing Society, Hyderabad, Sindh, Pakistan 71000
+                    +92 332 466 6823</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Lahore.png" alt="UK Flag"> <!-- UK Flag -->
+                <span>Lahore</span>
+                <span>2nd Floor, Commercial Plaza Near Allah-U-Chowk Khayaban-e-Firdousi, Block E Phase 1 Johar Town, Lahore
+                    +92 332 466 6823</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-USA.png" alt="Australia Flag"> <!-- Australia Flag -->
+                <span>Usa</span>
+                <span>1000 John R RD, ST 602, Troy 48083
+                    +1 517 366 1928</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Qatar.png" alt="India Flag"> <!-- India Flag -->
+                <span>Qatar</span>
+                <span>+97 430 074 923</span>
+            </div>
+            <div class="country-icon">
+                <img src="images/Icon-Canada.png" alt="Germany Flag"> <!-- Germany Flag -->
+                <span>Canada</span>
+                <span>3050-160 ERIN Center BLV MISSISSAUGA L5M OP5
+                    +1 289 547 2576</span>
+            </div>
+        </div>
+  
+        <div class="footer-content">
+            
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <a href="#"><img src="IMG/logo2.png" alt="logo"></a>
+                    </div>
+                    
+                </div>
+  
+                <div class="footer-social-icon">
+                  <h4>Follow us</h4>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  
+              </div>
+  
+                <div class="footer-widget">
+                    <h3>Subscribe</h3>
+                    <p>Don’t miss to subscribe to our news feeds, kindly fill the form below.</p>
+                    
+                </div>
+                <div class="subscribe-form">
+                  <form action="#">
+                      <input type="email" placeholder="Email Address" required>
+                      <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                  </form>
+              </div>
+           
+        </div>
+    </div>
+  
+    <div class="footer-menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog_one.html">Blog</a></li>
+        </ul>
+    </div>
+  
+    <div class="copyright-area">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
